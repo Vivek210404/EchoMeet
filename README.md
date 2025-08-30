@@ -40,3 +40,50 @@
 - Vite (bundler)
 - Render (hosting & deployment)
 
+
+## ⚡ Getting Started  
+
+### 🔹 Prerequisites  
+- Node.js **v18+**  
+- npm  
+- MongoDB (Atlas or local instance)  
+
+---
+
+### 🔹 Backend Setup  
+
+```sh
+cd backend
+npm install
+npm run dev
+```
+👉 Runs at **http://localhost:8000** by default.  
+
+---
+
+### 🔹 Frontend Setup  
+
+```sh
+cd frontend
+npm install
+npm run dev
+```
+👉 Runs at **http://localhost:5173** (Vite).  
+
+---
+
+### 🔹 Build for Production  
+
+```sh
+cd frontend
+npm run build
+```
+Build output will be in `frontend/dist/`.  
+
+---
+
+## ⚙️ Environment Configuration  
+
+- **Frontend** – API base URL is managed in `src/environment.js`.  
+- **Backend** – Update MongoDB connection in `backend/src/app.js`.  
+- **Auth** – JWT tokens are used for secure authentication & session management.  
