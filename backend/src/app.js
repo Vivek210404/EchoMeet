@@ -4,6 +4,8 @@ import { createServer } from "node:http";
 import { Server } from "socket.io";
 
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
 import { connectToSocket } from "./controllers/socketManager.js";
 
 import cors from "cors";
@@ -24,7 +26,7 @@ app.use("/api/v1/users", userRoutes);
 
 
 const start = async () => {
-    const connectionDb = await mongoose.connect("mongodb+srv://vivek210404:Vivek12@cluster0.sbumnwy.mongodb.net/")
+    const connectionDb = await mongoose.connect(process.env.MONGO_URL)
     console.log(`Mongo connected DB Host: ${connectionDb.connection.host}`)
     server.listen(app.get("port"), () => {
         console.log("Listening on Port 8000")
