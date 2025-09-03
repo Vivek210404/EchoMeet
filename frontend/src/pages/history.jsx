@@ -5,7 +5,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import HomeIcon from '@mui/icons-material/Home';
-import { Button,IconButton } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 
 export default function History() {
     const { getHistoryOfUser } = useContext(AuthContext);
@@ -31,6 +31,16 @@ export default function History() {
         const year = date.getFullYear();
         return `${day}/${month}/${year}`;
     };
+
+    let formatTime = (dateString) => {
+        const date = new Date(dateString);
+        const hours = date.getHours().toString().padStart(2, "0");
+        const minutes = date.getMinutes().toString().padStart(2, "0");
+        const seconds = date.getSeconds().toString().padStart(2, "0");
+
+        return `${hours}:${minutes}:${seconds}`;
+    };
+
 
     return (
         <div style={{
@@ -79,9 +89,13 @@ export default function History() {
                                 <Typography sx={{ fontSize: 16, fontWeight: "bold" }} gutterBottom>
                                     #{i + 1} &nbsp; Code: {e.meetingCode}
                                 </Typography>
-                                <Typography sx={{ fontSize: 14 }}>
+                                <Typography sx={{ mb: 1.5 }}>
                                     Date: {formatDate(e.date)}
                                 </Typography>
+                                <Typography sx={{ fontSize: 14 }}>
+                                    Time: {formatTime(e.date)}
+                                </Typography>
+
                             </CardContent>
                         </Card>
                     ))
