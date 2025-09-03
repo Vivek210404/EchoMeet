@@ -10,6 +10,7 @@ import MicOffIcon from '@mui/icons-material/MicOff'
 import ScreenShareIcon from '@mui/icons-material/ScreenShare';
 import StopScreenShareIcon from '@mui/icons-material/StopScreenShare'
 import ChatIcon from '@mui/icons-material/Chat'
+import SendIcon from '@mui/icons-material/Send';
 
 import styles from "../styles/videoComponent.module.css";
 
@@ -455,14 +456,14 @@ export default function VideoMeetComponent() {
             onChange={e => setUsername(e.target.value)}
             InputProps={{
               style: {
-                color: "#ffffff",           
-                backgroundColor: "#2c3e50", 
+                color: "#ffffff",
+                backgroundColor: "#2c3e50",
                 borderRadius: "8px"
               }
             }}
             InputLabelProps={{
               style: {
-                color: "#e0e0e0"          
+                color: "#e0e0e0"
               }
             }}
           />
@@ -501,8 +502,28 @@ export default function VideoMeetComponent() {
               </div>
 
               <div className={styles.chattingArea}>
-                <TextField value={message} onChange={(e) => setMessage(e.target.value)} id="outlined-basic" label="Enter Your chat" variant="outlined" />
-                <Button variant='contained' onClick={sendMessage}>Send</Button>
+                <TextField
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  id="outlined-basic"
+                  label="Type a message..."
+                  variant="outlined"
+                  className={styles.chatInput}
+                  InputProps={{
+                    style: { color: "#fff" }
+                  }}
+                  InputLabelProps={{
+                    style: { color: "#bbb" }
+                  }}
+                />
+                <Button
+                  variant="contained"
+                  onClick={sendMessage}
+                  className={styles.sendButton}
+                  endIcon={<SendIcon />}
+                >
+                  Send
+                </Button>
               </div>
 
             </div>
