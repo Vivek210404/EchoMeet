@@ -510,7 +510,7 @@ export default function VideoMeetComponent() {
                   variant="outlined"
                   className={styles.chatInput}
                   InputProps={{
-                    style: { color: "#fff" }
+                    style: { color: "#000" }
                   }}
                   InputLabelProps={{
                     style: { color: "#bbb" }
