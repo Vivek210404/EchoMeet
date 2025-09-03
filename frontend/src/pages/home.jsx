@@ -26,23 +26,41 @@ function HomeComponent() {
 
                 <div style={{ display: "flex", alignItems: "center" }}>
 
-                    <h2>EchoMeet</h2>
+                    <h1><span style={{color: "#3B82F6"}}>Echo</span>Meet</h1>
                 </div>
 
                 <div style={{ display: "flex", alignItems: "center" }}>
-                    <IconButton onClick={
-                        () => {
-                            navigate("/history")
-                        }
-                    }>
-                        <RestoreIcon />
-                    </IconButton>
-                    <p>History</p>
+                    <Button
+                        onClick={() => navigate("/history")}
+                        variant="outlined"
+                        startIcon={<RestoreIcon />}
+                        style={{
+                            borderColor: "#1976d2",
+                            color: "#1976d2",
+                            borderRadius: "8px",
+                            padding: "6px 16px",
+                            fontWeight: "bold",
+                            textTransform: "none",
+                            marginRight: "10px"
+                        }}
+                    >
+                        History
+                    </Button>
 
                     <Button onClick={() => {
                         localStorage.removeItem("token")
                         navigate("/auth")
-                    }}>
+                    }}
+                        variant="contained"
+                        style={{
+                            backgroundColor: "#1976d2",
+                            color: "white",
+                            borderRadius: "8px",
+                            padding: "6px 16px",
+                            fontWeight: "bold",
+                            textTransform: "none"
+                        }}
+                    >
                         Logout
                     </Button>
                 </div>
@@ -54,11 +72,31 @@ function HomeComponent() {
             <div className="meetContainer">
                 <div className="leftPanel">
                     <div>
-                        <h2>Providing Quality Video Call Just Like Quality Education</h2>
+                        <h2>Seamless & Secure Video Meetings, Anytime, Anywhere.</h2>
 
                         <div style={{ display: 'flex', gap: "10px" }}>
 
-                            <TextField onChange={e => setMeetingCode(e.target.value)} id="outlined-basic" label="Meeting Code" variant="outlined" />
+                            <TextField
+                                onChange={e => setMeetingCode(e.target.value)}
+                                id="outlined-basic"
+                                label="Meeting Code"
+                                variant="outlined"
+                                value={meetingCode}
+                                InputProps={{
+                                    style: {
+                                        color: "#ffffff",            
+                                        backgroundColor: "#2c3e50",  
+                                        borderRadius: "8px"
+                                    }
+                                }}
+                                InputLabelProps={{
+                                    style: {
+                                        color: "#e0e0e0"  
+                                    }
+                                }}
+                            />
+
+
                             <Button onClick={handleJoinVideoCall} variant='contained'>Join</Button>
 
                         </div>

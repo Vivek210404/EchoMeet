@@ -430,7 +430,6 @@ export default function VideoMeetComponent() {
     socketRef.current.emit('chat-message', message, username)
     setMessage("");
 
-    // this.setState({ message: "", sender: username })
   }
 
   let handleEndCall = () => {
@@ -445,10 +444,29 @@ export default function VideoMeetComponent() {
   return (
     <div>
       {askForUsername === true ?
-        <div>
+        <div className='navBar'>
 
           <h2>Enter into Lobby</h2>
-          <TextField id="outlined-basic" label="Username" value={username} variant="outlined" onChange={e => setUsername(e.target.value)} />
+          <TextField
+            id="outlined-basic"
+            label="Username"
+            value={username}
+            variant="outlined"
+            onChange={e => setUsername(e.target.value)}
+            InputProps={{
+              style: {
+                color: "#ffffff",           
+                backgroundColor: "#2c3e50", 
+                borderRadius: "8px"
+              }
+            }}
+            InputLabelProps={{
+              style: {
+                color: "#e0e0e0"          
+              }
+            }}
+          />
+
           <Button variant="contained" onClick={connect}>Connect</Button>
 
           <div>

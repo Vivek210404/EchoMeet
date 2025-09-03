@@ -69,7 +69,8 @@
 }
 
 .myMessage {
-  background-color: #DCF8C6; /* light green (WhatsApp style) */
+  background-color: #DCF8C6; 
+  color: #000000;
   padding: 8px 12px;
   border-radius: 10px;
   margin: 5px 0;
@@ -79,7 +80,8 @@
 }
 
 .otherMessage {
-  background-color: #FFFFFF; /* white */
+  background-color: #FFFFFF; 
+  color: #000000;
   padding: 8px 12px;
   border-radius: 10px;
   margin: 5px 0;
@@ -90,7 +92,7 @@
 }
 
 .sender {
-  font-size: 12px;
+  font-size: 15px;
   font-weight: bold;
   color: #555;
   margin-bottom: 3px;
